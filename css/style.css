@@ -17,3 +17,8 @@ header {
     background-size: cover;
     background-position: center top;
 }
+@media (min-width:768px) {
+    .sns-2 {
+        width: 50%
+    }
+}
