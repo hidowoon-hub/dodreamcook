@@ -12,6 +12,19 @@ header {
     background-size: cover;
     background-position: center top;
 }
+/* 서비스 영역 hover & 배경색 변경*/
+.card-hover:hover {
+    cursor: pointer;
+    background-color: bisque;
+}
+
+#news {
+    background-image: linear-gradient(to top,rgba(0,0,0,0.8),rgba(0,0,0,0.2)), url(../images/news-bg.jpg);
+    background-size: cover;
+    background-position: center;
+
+}
+
 #sns-link {
     background-image: linear-gradient(to top,rgba(0,0,0,0.8),rgba(0,0,0,0.2)), url(../images/sns-bg.jpg);
     background-size: cover;
