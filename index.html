@@ -9,19 +9,77 @@
     <link rel="stylesheet" href="./css/style.css">
 
 </head>
-<body>
+<body data-bs-spy="scroll" data-bs-target="#navbarSupportedContent">
+    <!-- 네비게이션 시작 -->
+    <nav class="navbar navbar-dark navbar-expand-md bg-dark fixed-top">
+        <div class="container">
+        <a class="navbar-brand gugi-font" href="#home">
+            <img src="./images/logo.png" alt="logo">
+            두드림 Cook
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto my-2">
+            <li class="nav-item">
+                <a class="nav-link" href="#home">홈</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#about-chef">쉐프소개</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#portpolio">포트폴리오</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#service">서비스</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#blog">블로그</a>
+            </li>
+             <li class="nav-item">
+                <a class="nav-link" href="#contact">연락처</a>
+            </li>
+            
+                        
+        </ul>
+        </div>
+    </div>
+</nav>
+    <!-- 네비게이션 종료 -->
+
     <!-- 해더영역시작 -->
-    <header class="vh-100 text-white d-flex flex-column justify-content-center align-items-center" id="home">
+    <header class="vh-100 text-white d-flex flex-column justify-content-center align-items-center"
+            id="home">
         <h1 class="display-3 fw-bold mb-5">두드림 ART Cook</h1>
         <h4 class="fs-2 mb-3" >요리와 아트의 만남</h4>
         <p class="lead mb-5">아름다운 한 끼로 삶의 색채를 더하다</p>
-        <button type="button" class="btn btn-outline-warning rounded-pill">대표요리보기</button>
+        <!-- <button type="button" class="btn btn-outline-warning rounded-pill" >대표요리보기</button> -->
+         <button type="button" class="btn btn-outline-warning rounded-pill" data-bs-toggle="modal"
+                 data-bs-target="#bestmenuModal">대표요리보기</button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="bestmenuModal" tabindex="-1"
+                aria-labelledby="bestmenuModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5 text-dark" id="bestmenuModalLabel">ART Cook 대표요리</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">  
+                        <img src="./images/bestmenu.jpg" class="card-img-top" alt="대표요리" class="img-fluid">
+                        <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus provident deserunt neque expedita unde quibusdam libero totam accusantium dignissimos, mollitia ullam reiciendis possimus, perferendis aspernatur praesentium reprehenderit optio atque sed error. Provident architecto eligendi distinctio dignissimos repudiandae consequuntur voluptate sequi. libero totam accusantium dignissimos, mollitia ullam reiciendis possimus, perferendis aspernatur praesentium reprehenderit optio atque sed error. Provident architecto eligendi distinctio dignissimos repudiandae consequuntur voluptate sequi.</p>   
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
     <!-- 해더영역 끝 -->
 
     <!-- 쉐프 소개 섹션 시작 -->
-     <br>
-     <br>
     <section class="container" id="about-chef">
         <div class="text-center py-5">
                 <h2 class="fw-bold">ART Cook Chef</h2>
@@ -29,14 +87,13 @@
         
         </div>
 
-        <div class="row align-items-center justify-content-center pb-5">
+        <div class="row align-items-center justify-content-center mb-5">
             <div class="col-md-5">
-                
-                
+                 <img src="./images/chef.jpg" alt="쉐프" class="img-fluid">    
             </div>
-            <div class="col-md-7" col-lg-5>
+            <div class="col-md-7 col-lg-5">
                 <h3 class="fw-bold my-3 my-md-0 mb-md-3">이젠 Emmi</h3>
-                <p class="1h-l">Lorem ipsum turi voluptatibus accusantium nam! Qui autem amet obcaecati iure suscipit ea laboriosam.</p>
+                <p class="1h-lg">Lorem ipsum turi voluptatibus accusantium nam! Qui autem amet obcaecati iure suscipit ea laboriosam.</p>
                 <p class="1h-lg">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint perspiciatis nobis qui architecto quaerat temporibus consequuntur et dolorum, labore ?</p>
             </div>
         </div>
@@ -75,8 +132,8 @@
     <!-- 포트폴리오 섹션 끝 -->
 
     <!-- 서비스 섹션 시작 -->
-        <section id="service" class="container">            
-            <div class="fw-bold mb-3 text-center">
+        <section id="service" class="container overflow-hidden py-5">            
+            <div class="fw-bold mb-3 text-center py-5">
                 <h2 class="fw-bold" mb-3>ART Cook 서비스</h2>
                 <p>Lorem ipsum dolor sit amet consectetur.</p>
             </div>
@@ -222,16 +279,17 @@
                 <!-- ### -->
                 <div class="col-lg-3">
                 <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newsModal">
                     뉴스보기
                     </button>
 
                     <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="newsModal" tabindex="-1"
+                         aria-labelledby="newsModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                    <h5 class="modal-title" id="newsModalLabel">Modal title</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
@@ -242,16 +300,11 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <!-- ### -->
             </div>
         </div>
-
-
-
      </section>
-
     <!-- 뉴스 섹션 종료 -->
 
     <!-- 연락처 섹션 시작 -->
@@ -292,6 +345,20 @@
     </section>
 
     <!-- 연락처 섹션 끝 -->
+
+    <!-- 대표요리 시작 -->
+    <section>
+            <div id="">
+                <h2 class="fw-bold">ART Cook 대표요리</h2>
+                <img src="./images/bestmenu.jpg" class="card-img-top" alt="블로그4">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus provident deserunt neque expedita unde quibusdam libero totam accusantium dignissimos, mollitia ullam reiciendis possimus, perferendis aspernatur praesentium reprehenderit optio atque sed error. Provident architecto eligendi distinctio dignissimos repudiandae consequuntur voluptate sequi.</p>
+            </div>
+
+
+    </section>
+
+    <!-- 대표요리 끝 -->
+
     <script src="./js/bootstrap.bundle.js"></script>
 </body>
 </html>

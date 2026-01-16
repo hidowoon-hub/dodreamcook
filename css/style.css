@@ -4,7 +4,11 @@
 body{ 
     font-family: "Noto Sans",sans-serif;
 }
-h1,h2,h3,h4,h5{   font-family: "Gugi", sans-serif;
+h1,h2,h3,h4,h5 .gugi-font {   font-family: "Gugi", sans-serif;
+}
+
+.nav-link:hover, .nav-link.active {
+    color:aqua !important;
 }
 
 header {
